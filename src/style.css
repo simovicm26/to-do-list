@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+ 
+  
+  body{
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+  }
+
+  .container{
+      display: grid;
+      grid-template-columns: minmax(400px,1fr) 4fr;
+      grid-template-rows: minmax(60px,4vw) 1fr;
+      grid-template-areas: 
+      "nav nav"
+      "sidebar main";
+      width: 100%;
+      height: 100%;
+  }
+
+  .nav{
+      background-color: rgb(0, 132, 255);
+      grid-area: nav;
+      display: flex;
+      align-items: center;
+      padding-left: 50px;
+  }
+
+  .main-content{
+      background-color: rgb(255, 255, 255);
+      grid-area: main;
+      background: url(./background.jpg);
+      background-size: cover;
+      background-position: center;
+      display: grid;
+      grid-template-rows: min-content 1fr;
+      padding: 70px 100px;
+      gap:20px;
+  }
+
+  .sidebar{
+      background-color: rgb(255, 255, 255);
+      grid-area: sidebar;
+      font-family: 'Roboto';
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: 50px 50px;
+      -webkit-box-shadow: inset -5px 0px 32px -21px rgba(0,0,0,0.36);
+      -moz-box-shadow: inset -5px 0px 32px -21px rgba(0,0,0,0.36);
+      box-shadow: inset -5px 0px 32px -21px rgba(0,0,0,0.36);
+  }
+
+  h1{
+      color:rgb(41, 41, 41);
+      font-weight: 500;
+      font-size: max(2vw,25px);
+      margin: 0;
+      padding: 0;
+  }
+
+  .sidebar-title{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 20px 0;
+      border-bottom: 1px solid rgb(192, 192, 192);
+      align-items: center;
+  }
+
+  .new-task-btn{
+      background-color: white;
+      padding: 10px 30px;
+      border-radius: 50px;
+      transition: ease 0.3s all;
+  }
+
+  .new-task-btn:hover{
+
+    padding: 10px 40px;
+
+    background-color: rgb(221, 240, 255);
+  }
+
+  h2{
+    color:rgb(41, 41, 41);
+    font-weight: 300;
+    font-size: max(1.5vw,25px);
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  .sidebar h2:hover{
+      text-decoration: underline;
+  }
+
+  .header-container{
+
+    font-size: 25px;
+    background-color: white;
+    width: 500px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    position: relative;
+
+  }
+
+  .header-container:hover{
+
+    background-color: rgb(255, 175, 175);
+
+  }
+
+  .header-container::after{
+      content: url(./bin.svg);
+      position: absolute;
+      right: 30px;
+      top:14px;
+  }
+
+  .main-container{
+
+    width: 500px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 0px 30px;
+  }
+
+  .pop-up-container{
+      background-color: rgba(0, 132, 255, 0.432);
+      position: absolute;
+      width: 100vw; 
+      height: 100vh;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items:center;
+  }
+
+  .pop-up-content{
+        width: 500px;
+        height: 200px;
+        background-color: white;
+        border-radius: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 0 20px;
+        grid-template-areas:
+        "title title"
+        "input input"
+        "cancelButton createButton";
+  }
+
+  .pop-up-content input:first-child{
+      grid-area: input;
+      font-size: 25px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: rgb(241, 241, 241);
+  }
+
+  .pop-up-content input:focus{
+      border:2px solid rgb(0, 132, 255);
+      outline: none;
+  }
+
+  .pop-up-content h2:nth-child(2){
+      grid-area: title;
+  }
+
+  .pop-up-content div:nth-child(3){
+      grid-area: createButton;
+      color:rgb(0, 132, 255);
+  }
+
+  .pop-up-content div:nth-child(4){
+      grid-area: cancelButton;
+      color:red;
+  }
+
+  .pop-up-content div{
+      font-size: 25px;
+      text-align: center;
+      padding: 20px 0px;
+      margin: 0;
+      font-weight: 300;
+  }
+  .pop-up-content div:hover{
+      text-decoration: underline;
+  }
