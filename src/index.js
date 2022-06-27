@@ -1,14 +1,19 @@
 import './style.css';
 
-import showPopUp from './starting-page'
+import { listPopUp } from './form-list';
+
+
+const body = document.querySelector('body');
 
 document.addEventListener('click',function(e){
+
     if(e.target.matches('#tag-one')){
-        showPopUp();
+
+        listPopUp.renderPopUp(body);
+
     }
-});
 
-
+})
 
 
 

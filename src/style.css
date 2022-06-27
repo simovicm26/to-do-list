@@ -22,9 +22,6 @@
   .nav{
       background-color: rgb(0, 132, 255);
       grid-area: nav;
-      display: flex;
-      align-items: center;
-      padding-left: 50px;
   }
 
   .main-content{
@@ -55,7 +52,7 @@
 
   h1{
       color:rgb(41, 41, 41);
-      font-weight: 500;
+      font-weight: 400;
       font-size: max(2vw,25px);
       margin: 0;
       padding: 0;
@@ -70,20 +67,6 @@
       align-items: center;
   }
 
-  .new-task-btn{
-      background-color: white;
-      padding: 10px 30px;
-      border-radius: 50px;
-      transition: ease 0.3s all;
-  }
-
-  .new-task-btn:hover{
-
-    padding: 10px 40px;
-
-    background-color: rgb(221, 240, 255);
-  }
-
   h2{
     color:rgb(41, 41, 41);
     font-weight: 300;
@@ -92,105 +75,149 @@
     padding: 20px 0;
   }
 
-  .sidebar h2:hover{
+  .sidebar-container h2:hover{
       text-decoration: underline;
   }
 
-  .header-container{
+  .pop-up-wrapper{
 
-    font-size: 25px;
-    background-color: white;
-    width: 500px;
-    padding: 15px 30px;
-    border-radius: 50px;
-    position: relative;
-
-  }
-
-  .header-container:hover{
-
-    background-color: rgb(255, 175, 175);
-
-  }
-
-  .header-container::after{
-      content: url(./bin.svg);
-      position: absolute;
-      right: 30px;
-      top:14px;
-  }
-
-  .main-container{
-
-    width: 500px;
-    background-color: white;
-    border-radius: 25px;
-    padding: 0px 30px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 132, 255, 0.322);
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .pop-up-container{
-      background-color: rgba(0, 132, 255, 0.432);
-      position: absolute;
-      width: 100vw; 
-      height: 100vh;
-      z-index: 100;
-      left: 0;
-      top: 0;
-      display: flex;
-      justify-content: center;
-      align-items:center;
+    background-color: white;
+    padding:30px;
+    border-radius: 50px;
+    text-align: center;
   }
 
-  .pop-up-content{
-        width: 500px;
-        height: 200px;
-        background-color: white;
-        border-radius: 30px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        padding: 0 20px;
-        grid-template-areas:
-        "title title"
-        "input input"
-        "cancelButton createButton";
+  input{
+
+    width: 400px;
+    border-radius: 50px;
+    background-color: rgb(243, 243, 243);
+    font-size: 25px;
+    padding: 15px;
+    margin: 15px;
+    border:none;
+  }
+  
+  input:focus{
+    outline: none;
+    border: 2px solid rgb(0, 132, 255);
   }
 
-  .pop-up-content input:first-child{
-      grid-area: input;
+  #create-list-button{
+
+    font-size: 25px;
+    color:rgb(0, 132, 255);
+    padding: 10px;
+  }
+
+  #cancel-list-button{
+
+    font-size: 25px;
+    color:red;
+    padding: 10px;  
+
+  }
+
+  .main-list-container{
+
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 50px;
+    padding: 50px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .main-list-container h1{
+
+    margin-bottom: 30px;
+
+  }
+
+  h3{
+
+    font-size: 18px;
+    font-weight: 400;
+    color:rgb(0, 132, 255);
+  }
+
+  .delete-task{
+      color: red;
       font-size: 25px;
+      margin-top:auto;
+      width: 100%;
       padding: 10px;
-      border-radius: 10px;
-      border: none;
-      background-color: rgb(241, 241, 241);
-  }
-
-  .pop-up-content input:focus{
-      border:2px solid rgb(0, 132, 255);
-      outline: none;
-  }
-
-  .pop-up-content h2:nth-child(2){
-      grid-area: title;
-  }
-
-  .pop-up-content div:nth-child(3){
-      grid-area: createButton;
-      color:rgb(0, 132, 255);
-  }
-
-  .pop-up-content div:nth-child(4){
-      grid-area: cancelButton;
-      color:red;
-  }
-
-  .pop-up-content div{
-      font-size: 25px;
       text-align: center;
-      padding: 20px 0px;
-      margin: 0;
-      font-weight: 300;
+      border-radius: 50px;
   }
-  .pop-up-content div:hover{
-      text-decoration: underline;
+
+  .delete-task:hover{
+
+    background-color:rgba(245, 245, 245, 0.979);
+
   }
+
+  #create-task-button{
+
+    font-size: 25px;
+    color:rgb(0, 132, 255);
+    padding: 10px;
+
+  }
+
+  .task-wrapper{
+
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+
+    align-items: center;
+    padding:10px;
+  }
+
+  .task-wrapper:hover{
+
+    background-color: rgba(245, 245, 245, 0.979);
+    border-radius: 10px;
+  }
+
+  p{
+    margin:0;
+    padding: 0;
+  }
+
+ .sidebar-task-container h2:hover{
+
+    text-decoration: underline;
+
+  }
+
+.close-icon{
+
+  width: 50px;
+  position: absolute;
+  top:50px;
+  right: 50px;
+
+}
+
+#bin{
+
+  z-index: 10;
+
+}
